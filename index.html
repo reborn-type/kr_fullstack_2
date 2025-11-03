@@ -8,63 +8,77 @@
 </head>
     <body>
 
-        <div class="page-container">
+        <div class="page">
 
             <header class="header">
-                <h1>Хедер</h1>
+                <h1 class="header__title">Хедер</h1>
             </header>
 
             <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+                    <li class="nav__item"><a class="nav__link" href="pages/news.html">Новости</a></li>
+                    <li class="nav__item"><a class="nav__link" href="pages/practices.html">Практики</a></li>
+                    <li class="nav__item"><a class="nav__link" href="pages/goods.html">Товары</a></li>
+                    <li class="nav__item"><a class="nav__link" href="pages/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
 
-            <main class="content">
-                <article class="profile-header">
-                    <h1 class="profile-title">Информация об авторе</h1>
-                    <img src="images/photo.jpg" alt="Фото автора" width="200" height="250" class="profile-photo">
-                    <p class="profile-name">Хинчагов Руслан Артурович</p>
-                    <p class="profile-group">ЭФБО-08-24</p>
-                </article>
-
-                <section class="about-me">
-                    <h2>Обо мне:</h2>
-                    <p>Родился и живу в Москве, учусь в РТУ МИРЭА на направлении Фуллстек разработка, вне вуза 
-                    учавствую в студенческом союзе, учу языки программирования, а также учавствую в школе CTF. </p>
-                </section>
-
-                <section class="skills-container">
-                    <h2>Мои навыки:</h2>
-                    <div class="skills-grid">
-                        <div class="skill-tag">Графический дизайн(Figma, PS, AI, и т.д.)</div>
-                        <div class="skill-tag">Node.js</div>
-                        <div class="skill-tag">Python</div>
-                        <div class="skill-tag">C++ и C#</div>
+            <main class="main">
+                <section class="profile">
+                    <div class="profile__card">
+                        <h1 class="profile__title">Информация об авторе</h1>
+                        <img src="images/photo.jpg" alt="Фото автора" width="200" height="250" class="profile__photo">
+                        <div class="profile__info">
+                            <p class="profile__name">Хинчагов Руслан Артурович</p>
+                            <p class="profile__group">ЭФБО-08-24</p>
+                        </div>
                     </div>
                 </section>
 
-                <section class="experience-section">
+                <section class="about">
+                    <h2 class="about__header">Обо мне:</h2>
+                    <div class="about__content">
+                        <p class="about__text">Родился и живу в Москве, учусь в РТУ МИРЭА на направлении Фуллстек разработка, вне вуза 
+                        учавствую в студенческом союзе, учу языки программирования, а также изучаю английский язык. </p>
+                    </div>
+                </section>
+
+                <section class="skills">
+                    <h2 class="skills__header">Мои навыки:</h2>
+                    <div class="skills__grid">
+                        <div class="skills skill--graphic-design">
+                            <span class="skill__name">Графический дизайн(Figma, PS, AI, и т.д.)</span>
+                        </div>
+                        <div class="skills skill--js">
+                            <span class="skill__name">Node.js</span>
+                        </div>
+                        <div class="skills skill--python">
+                            <span class="skill__name">Python</span>
+                        </div>
+                        <div class="skills skill--clang">
+                            <span class="skill__name">C++ и C#</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience">
                     <div>
-                        <h2 class="section-title">Мой опыт работы:</h2>
-                        <div class="experience-grid">
+                        <h2 class="experience__title">Мой опыт работы:</h2>
+                        <div class="experience__grid">
                             <article class="experience-card">
-                                <h3 class="experience-title">Написание приложения для изучения иностранных слов:</h3><br>
-                                <p class="experience-desc">Написал LongLang на языке C++ с использованием фреймворка QtCreator и БД SQLite.</p>
+                                <h3 class="experience-card__title">Написание приложения для изучения иностранных слов:</h3><br>
+                                <p class="experience experience__desc">Написал LongLang на языке C++ с использованием фреймворка QtCreator и БД SQLite.</p>
                             </article>
 
                             <article class="experience-card">
-                                <h3 class="experience-title">Работа графическим дизайнером:</h3><br>
-                                <p class="experience-desc">Более 100 выполненых заказов в 2д, 3д и анимациях на фрилансе, а также год работы в команде SMM тг канала Majestic RP.</p>
+                                <h3 class="experience-card__title">Работа графическим дизайнером:</h3><br>
+                                <p class="experience experience__desc">Более 100 выполненых заказов в 2д, 3д и анимациях на фрилансе, а также год работы в команде SMM тг канала Majestic RP.</p>
                             </article>
                             
                             <article class="experience-card">
-                                <h3 class="experience-title">Работа курьером:</h3><br>
-                                <p class="experience-desc">И нет не за 500к в месяц, а за пару сотен за один заказ, Dostavista имба реально.</p>
+                                <h3 class="experience-card__title">Работа курьером:</h3><br>
+                                <p class="experience experience__desc">И нет не за 500к в месяц, а за пару сотен за один заказ, Dostavista имба реально.</p>
                             </article>
                         </div>
                     </div>
