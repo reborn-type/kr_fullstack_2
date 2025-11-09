@@ -4,93 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts</title>
-    <link rel="stylesheet" href="../style/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
-    <main class="page">
-        <header class="header">
-            <h1 class="header__title">Хедер</h1>
+<body class="d-flex flex-column min-vh-100 bg-light">
+    <div class="container-fluid p-0">
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Товары</h1>
+                    </div>
+                </div>
+            </div>
         </header>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
-                <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
-                <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
-                <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
-                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-            </ul>
+
+        <nav class="navbar navbar-expand-lg nabar-dark bg-dark">
+            <div class="container">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html" style="color: white;">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./news.html" class="nav-link" style="color: white">
+                                <i class="bi bi-newspaper me-1"></i>Новости
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./practices.html" class="nav-link" style="color: white;">
+                                <i class="bi bi-code-slash me-1"></i>Практики
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./goods.html" class="nav-link" style="color: white;">
+                                <i class="bi bi-cart me-1"></i>Товары
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./contacts.html" class="nav-link" style="color: white;">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <section class="contacts">
-            <div class="contact__grid">
-                <article class="email-card">
-                    <h1 class="email__title">ruslanh593@gmail.com</h1>
-                </article>
-                <article class="address-card">
-                    <p class="address__title">г.Москва пр-т. Вернадского д.78</p>
-                </article>
-                <button type="submit" onclick="contactModal.showModal()" class="call-me-button">Позвоните мне</button>
-            </div>
-        </section>
-        <footer class="footer">
-            <p>Футер</p>
-        </footer>
 
-        <dialog id="modal">
-            <div class="modal__header">
-                <h2>Форма обратной связи</h2>
+        <main class="container my-4 flex-grow-1">
+            <div class="header">
+                <h3 class="header__text">Свяжитесь со мной</h3>
             </div>
 
-            <div class="modal__content">
-                <form id="feedbackForm" method="dialog">
-                    <div class="form-group">
+            <form class="container d-flex justify-content-center " id="feedbackForm">
+                <div class="d-flex flex-column col-md-4">
+                    <div class="mb-3">
                         <label for="name">Имя <span class="required">*</span></label>
                         <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Телефон <span class="required">*</span></label>
-                        <input type="text" id="phone" name="phone" required placeholder="+7(XXX)XXX-XX-XX">
+                    <div class="mb-3">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="text" id="email" name="email" required placeholder="Введите вашу почту">
                     </div>
-                    <div class="form-group">
-                        <label for="email">Почта <span class="required">*</span></label>
-                        <input type="text" id="email" name="email" required placeholder="example@email.ru">
-                    </div>
-                    <div class="form-group">
-                        <select id="category" name="category" required>
-                            <option value="">Выберите категорию</option>
-                            <option value="technical">Техническая поддержка</option>
-                            <option value="commercial">Коммерческое предложение</option>
-                            <option value="cooperation">Сотрудничество</option>
-                            <option value="complaint">Жалоба</option>
-                            <option value="suggestion">Предложение</option>
-                            <option value="other">Другое</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
+                    <div class="mb-3">
                         <label for="message">Текст обращения <span class="required">*</span></label>
-                        <textarea id="message" name="message" required placeholder="Опишите вашу проблему"></textarea>
                     </div>
+                    <textarea id="message" name="message" class='mb-4'required placeholder="Опишите вашу проблему"></textarea>
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить сообщение</button>
+                </div>
+            </form>
 
-                    <div class="modal-actions">
-                        <button type="submit" class="btn btn-secondary" onclick="closeForm()">Отмена</button>
-                        <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+            <section class="contacts">
+                <div class="contact__grid">
+                    <h3 class="header contact__header">Контакты:</h3>
+                    <article class="email-card">
+                        <p class="email__text">&#128238; khinchagov.r.a@edu.mirea.ru</p>
+                    </article>
+                    <article class="github-card">
+                        <p class="github__text">&#128270; GitHub: reborn-type</p>
+                    </article>
+                    <article class="location-card">
+                        <p class="location_text">&#128205; Г. Москва</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+            <footer class="bg-dark text-white py-4" style="margin-top:auto;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="mb-0">&copy; 2025 Портфолио студента 2 курса. Все права защищены.</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <a href="./contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                            <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+                        </div>
                     </div>
-                </form>
-            </div>
-        </dialog>
+                </div>
+            </footer>
+
+            <!-- <dialog id="modal">
+                <div class="modal__header">
+                    <h2>Форма обратной связи</h2>
+                </div>
+
+                <div class="modal__content">
+                    <form id="feedbackForm" method="dialog">
+                        <div class="form-group">
+                            <label for="name">Имя <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон <span class="required">*</span></label>
+                            <input type="text" id="phone" name="phone" required placeholder="+7(XXX)XXX-XX-XX">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Почта <span class="required">*</span></label>
+                            <input type="text" id="email" name="email" required placeholder="example@email.ru">
+                        </div>
+                        <div class="form-group">
+                            <select id="category" name="category" required>
+                                <option value="">Выберите категорию</option>
+                                <option value="technical">Техническая поддержка</option>
+                                <option value="commercial">Коммерческое предложение</option>
+                                <option value="cooperation">Сотрудничество</option>
+                                <option value="complaint">Жалоба</option>
+                                <option value="suggestion">Предложение</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Текст обращения <span class="required">*</span></label>
+                            <textarea id="message" name="message" required placeholder="Опишите вашу проблему"></textarea>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button type="submit" class="btn btn-secondary" onclick="closeForm()">Отмена</button>
+                            <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </dialog> -->
             <script>
-                const contactModal = document.getElementById('modal');
+            
 
-                function closeForm(){
-                    const form = document.getElementById('feedbackForm');
-                    contactModal.close();
-                    form.reset();
-                };
                 // Функция для отправки формы
                 function submitForm() {
                     const form = document.getElementById('feedbackForm');
                     const formData = new FormData(form);
-                    
+                
                     // Простая валидация
                     if (!form.checkValidity()) {
                         form.reportValidity();
@@ -100,9 +169,7 @@
                     // Собираем данные формы
                     const data = {
                         name: formData.get('name'),
-                        phone: formData.get('phone'),
                         email: formData.get('email'),
-                        category: formData.get('category'),
                         message: formData.get('message')
                     };
 
@@ -112,27 +179,23 @@
                     // Показываем уведомление об успешной отправке
                     alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
                     
-                    // Закрываем модальное окно
-                    contactModal.close();
-                    
                     // Очищаем форму
                     form.reset();
                 }
 
                 // Закрытие модального окна по клику на фон
-                document.getElementById('submit').addEventListener('click', function(event) {
-                    if (event.target === this) {
-                        this.close();
-                    }
-                });
+                //document.getElementById('submit').addEventListener('click', function(event) {
+                //    if (event.target === this) {
+                //        this.close();
+                //    }
+                //});
 
                 // Обработка отправки формы через Enter (предотвращаем стандартное поведение)
-                document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
-                    if (event.key === 'Enter' && event.target.type !== 'textarea') {
-                        event.preventDefault();
-                    }
-                });
-            </script>
-    </main>
+                //document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
+                //    if (event.key === 'Enter' && event.target.type !== 'textarea') {
+                //        event.preventDefault();
+                //    }
+                //});
+        </script>
 </body>
 </html>
